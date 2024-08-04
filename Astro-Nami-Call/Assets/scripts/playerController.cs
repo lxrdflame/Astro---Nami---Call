@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    PlayerInput playerInput;
+    InputAction moveAction;
+    
     void Start()
     {
-        
+        playerInput = GetComponent<PlayerInput>();
+        moveAction = playerInput.actions.FindAction("Movement");
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         

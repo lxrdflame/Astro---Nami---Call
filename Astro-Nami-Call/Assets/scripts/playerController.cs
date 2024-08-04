@@ -6,17 +6,23 @@ using UnityEngine.InputSystem;
 public class playerController : MonoBehaviour
 {
     PlayerInput playerInput;
-    InputAction moveAction;
+    InputAction movementAction;
     
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        moveAction = playerInput.actions.FindAction("Movement");
+        movementAction = playerInput.actions.FindAction("Movement");
     }
 
     
     void Update()
     {
-        
+        MovePlayer();
+    }
+
+    void MovePlayer()
+    {
+        Vector2 direction = movementAction.ReadValue<Vector2>();
+        transform.position += new Vector3(direction.x, 0, direction.y) * Time.deltaTime;
     }
 }

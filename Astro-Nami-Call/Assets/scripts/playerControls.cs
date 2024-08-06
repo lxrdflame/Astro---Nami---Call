@@ -74,7 +74,7 @@ public class playerControls : MonoBehaviour
         verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
 
         // Apply the clamped vertical rotation to the player camera
-        playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);//for some reason the wholw code doesnt work without the camera in the inspector
+        playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);//for some reason the code doesnt work without the camera 
     }
     public void ApplyGravity()
     {
